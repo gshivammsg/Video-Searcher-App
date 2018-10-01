@@ -1,0 +1,13 @@
+<div class="container" >
+  <input type="text" placeholder="enter the video" #query>
+  <button class="btn btn-primary" (click)=searchVideo(query.value)>Search</button>
+</div>
+
+<div class="container" *ngFor="let video of videos" class="video-conatiner">
+  <p>
+    This is the video for {{video.tags}}
+  </p>
+  <video width="320" height="240" controls>
+    <source src="{{video.videos.medium.url}}" type="video/mp4">
+  </video>
+</div>
